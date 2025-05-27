@@ -8,8 +8,8 @@ connectDB();
 
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:3000',  // React frontend ka exact origin
-  credentials: true                  // credentials allow karna zaroori hai
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000', 
+  credentials: true                  
 }));
 app.use(express.json());
 
